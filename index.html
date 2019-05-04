@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI!</title> 
+    <style>
+        /* this helps us make the canvas full screen */
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- this is the canvas for our game -->
+    <canvas id="game"></canvas>
+</body>
+<!-- this is where we set up the canvas and load our game images -->
+<script src="init.js"></script>
+
+<!-- this is where I put two helpful standalone functions -->
+<script src="helpers.js"></script>
+
+<!-- this is the code for the healthbar above the hero and goblin's head -->
+<script src="healthbar.js"></script>
+
+<!-- this is the code for the coin powerups -->
+<script src="powerup.js"></script>
+
+<!-- this is the code for the hero (the character you control) -->
+<script src="hero.js"></script>
+
+<!-- this is the code for the bullets you and the dragon shoot -->
+<script src="bullet.js"></script>
+
+<!-- this is the code the controls the goblins -->
+<script src="goblin.js"></script>
+
+<!-- this is the code the controls the dragon -->
+<script src="dragon.js"></script>
+
+<!-- game.js is the file you probably want to start looking at to understand how the code works -->
+<!-- then from there, you can ctrl+f through the different files to find where different -->
+<!-- variables are defined. Change whatever you want! -->
+<script src="game.js"></script>
+</html>
