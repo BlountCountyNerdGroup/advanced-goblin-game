@@ -55,6 +55,9 @@ var hero = {
             if (pastLeftSide && beforeRightSide && belowTop && aboveBottom) {
                 powerups.splice(i, 1);
 
+                // create new powerup to replace old
+                powerups.push(getPowerUp());
+
                 return true;
             }
         }
@@ -68,6 +71,11 @@ var hero = {
         this.healthbar.changeHealth(this.hp);
     },
     gameLoop() {
+        if (this.hp <= 0) {
+            alert("You lose!") 
+            location.reload();
+        }
+
         this.draw();
 
         if (this.isTouchingPowerup()) {

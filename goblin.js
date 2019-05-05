@@ -72,6 +72,10 @@ function getGoblin() {
 
                 if (pastLeftSide && beforeRightSide && belowTop && aboveBottom) {
                     powerups.splice(i, 1);
+
+                    // create new powerup to replace old one
+                    powerups.push(getPowerUp());
+
                     return true;
                 }
             }
@@ -94,15 +98,16 @@ function getGoblin() {
                 this.getFaster();
             }
 
-            if (getDistBetween(goblin, hero) < 50) {
+            if (getDistBetween(goblin, hero) < 250) {
                 this.hasSeenHero = true;
             }
 
-            if (powerups.length > 0) {
-                this.moveTowardPowerup();
-            } else if (this.hasSeenHero) {
+            if (this.hasSeenHero) {
                 this.moveTowardPlayer();
+            } else if (powerups.length > 0) {
+                this.moveTowardPowerup();
             }
+            
             
             this.healthbar.moveTo(this.x, this.y - 10)
             this.draw();
@@ -121,7 +126,7 @@ goblins.push(getGoblin());
 // every 5 seconds, pushes another goblin into the array
 setInterval(function() {
     goblins.push(getGoblin());
-}, 5000);
+}, 1000);
 
 function renderGoblins() {
     for (var i = 0; i < goblins.length; i++) {

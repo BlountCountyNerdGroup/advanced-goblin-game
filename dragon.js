@@ -7,9 +7,11 @@ var dragon = {
         this.moveTowardGoblin();
     },
     shootAtEnemy() {
-        var goblin = goblins[0];
-        bulletColor = "red";   
-        shoot(this.x, this.y, goblin.x, goblin.y); // more info in bullet.js
+        if (goblins.length > 0) {
+            var goblin = goblins[0];
+            bulletColor = "red";   
+            shoot(this.x, this.y, goblin.x, goblin.y); // more info in bullet.js
+        }
     },
     moveTowardGoblin() { // works the same as the function in goblin.js
         if (goblins.length > 0) {
